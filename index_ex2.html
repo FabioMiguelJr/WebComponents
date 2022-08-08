@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Web Component - Exemplo 1</title>
+
+</head>
+<body>
+    <h1>Exemplo 1</h1>
+    <ul is="lista-colorida">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+    </ul>
+
+    <script>
+        class ListaColorida extends HTMLUListElement {
+            constructor(){
+                super();
+                console.log("ListaColorida");
+
+                const lis = this.querySelectorAll("li");
+                console.log(lis.length);
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].style.color = `hsl(${(i/lis.length)*360}, 100%, 50%)`;                    
+                }
+            }
+        }
+        customElements.define("lista-colorida", ListaColorida, {extends: "ul"});
+    </script>
+
+</body>
+</html>

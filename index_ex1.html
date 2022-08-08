@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Web Component - Exemplo 1</title>
+
+    <script>
+        class HelloWorldElement extends HTMLElement {
+            constructor() {
+                super();
+
+                this.attachShadow({mode:"open"});
+                const span = document.createElement("span");
+                span.textContent = "Hello world!";
+                this.shadowRoot.append(span);
+            }
+        }
+        customElements.define("hello-world", HelloWorldElement);
+        
+    </script>
+</head>
+<body>
+    <h1>Exemplo 1</h1>
+    <hello-world></hello-world>
+</body>
+</html>
