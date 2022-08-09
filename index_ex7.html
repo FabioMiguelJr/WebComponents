@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>HTML Template</title>
+
+    <script type="module" src="hello-world.js"></script>
+</head>
+<body>
+    <h1>Encapsular Web Components em Módulos</h1>
+
+    <hello-world></hello-world>
+    
+    <hello-world>
+        <div slot="conteudo"> Este é o Conteúdo do Elemento.</div>
+        <h2 slot="titulo">Título definido</h2>
+        <h2 slot="titulo">Título 2</h2>
+    </hello-world>
+</body>
+</html>
